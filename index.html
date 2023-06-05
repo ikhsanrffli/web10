@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EXERCISE 10</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;300;400;500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+  <style>
+    body,
+    html {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background-image: url('https://images.pexels.com/photos/3473569/pexels-photo-3473569.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+
+    }
+    .fullpage-image {
+      height: 100vh;
+      background-color: transparent !important;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .navbar {
+      background-color: transparent !important;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Roboto Mono', monospace;
+      position: sticky;
+    }
+    
+    .navbar-brand img {
+      max-height: 60px;
+    }
+    .navbar-dark .navbar-nav .nav-link {
+      color: #fff;
+      font-size: 18px;
+      margin-right: 20px;
+    }
+    .judul {
+      font-family: 'Secular One', sans-serif;
+      color: #fff;
+      font-weight: 600;
+      font-size: 50px;
+      letter-spacing: 5px;
+      margin-bottom: 20px;
+    }
+    .tombol {
+      margin-top: 20px;
+      margin-left: 30px;
+    }
+    .tombol button {
+      margin-right: 30px;
+      padding: 10px 70px;
+      border-radius: 50px;
+    }
+
+    @keyframes fade {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    #changing-text {
+      animation: fade 4s ease-in-out infinite;
+    }
+    .search-bar{
+      margin-top: 0.5rem;
+    }
+
+    .list-movie {
+      height: 100vh;
+      background-color: #222;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .list-movie h2, .list-movie p {
+      margin-bottom: 20px;
+    }
+
+    .list-movie h3 {
+      font-family: 'Secular One', sans-serif;
+      font-size: 18px;
+      margin-top: 0.5em;
+      letter-spacing: 5px;
+    }
+
+    .list-movie p {
+      font-size: 14px;
+    }
+
+    .movie-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      margin-top: 20px;
+    }
+
+    .movie-item {
+      width: 200px;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .movie-item img {
+      max-width: 100%;
+      width: 300px;
+      max-height: 100%;
+      height: 200px;
+    }
+
+
+        /* Media queries untuk tablet */
+        @media screen and (max-width: 768px) {
+          .list-movie{
+            height:auto ;
+          }
+           .search-bar{
+            margin-top:3em;
+           }
+          .movie-item {
+                width: 130px;
+            }
+          .slider input{
+            width: 65px;
+          }
+
+        }
+
+        /* Media queries untuk perangkat Android */
+        @media screen and (max-width: 480px) {
+            .movie-item {
+                width: 100%;
+                margin: 10px 0;
+            }
+            
+        }
+    .search-bar input#genre-input{
+  width: 300px;
+  height: 50px;
+  background: #2b303b;
+  border: none;
+  font-size: 10pt;
+  float: left;
+  color: #63717f;
+  color: #6b6b6b;
+  border: none;
+  padding-left: 45px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+    -webkit-transition: background .55s ease;
+  -moz-transition: background .55s ease;
+  -ms-transition: background .55s ease;
+  -o-transition: background .55s ease;
+  transition: background .55s ease;
+}
+
+.search-bar input#genre-input::-webkit-input-placeholder {
+   color: #65737e;
+}
+.search-bar input#genre-input:-moz-placeholder { /* Firefox 18- */
+   color: #65737e;  
+}
+.search-bar input#genre-input::-moz-placeholder {  /* Firefox 19+ */
+   color: #65737e;  
+}
+.search-bar input#genre-input:-ms-input-placeholder {  
+   color: #65737e;  
+}
+.search-bar input#genre-input:hover, .search-bar input#genre-input:focus, .search-bar input#genre-input:active{
+    outline:none;
+    border: none;
+    background: #ffffff;
+  }
+  .search-bar .icon{
+  position: absolute;
+  top: 50%;
+  margin-left: 17px;
+  margin-top: 17px;
+  z-index: 1;
+ 
+}
+.input-group-text {
+    height: 50px;
+  background-color: #ffc107;
+  border: none;
+  color: white;
+}
+.input-group-append button{
+  height: 50px;
+}
+/* CSS untuk Modal */
+.modal-header {
+  background-color: #FDCEDF;
+  border-bottom: none;
+}
+
+.modal-title {
+  color: #333;
+}
+
+.modal-body {
+  color: #555;
+}
+
+.modal-content{
+background-color: #FDCEDF;
+}
+.modal-footer {
+  background-color: #FDCEDF;
+  border-top: none;
+}
+
+.modal-footer .btn-secondary {
+  color: #333;
+}
+
+.modal-footer .btn-primary {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.modal-footer .btn-primary:hover {
+  background-color: #0056b3;
+}
+.close{
+  background-color: #FFE7A0;
+}
+.slider input{
+   margin:10px 2rem;
+}
+
+
+
+
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-hidden">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="pngaaa.com-2988926.png" alt="Logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#listmovie">LIST MOVIE</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://wa.me/0895411091302">CONTACT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">ABOUT US</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="fullpage-image">
+    <h1 class="judul">EXPLORER YOUR MOVIES <span id="changing-text" style="color: #ff7f27;">HORROR</span></h1>
+    <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <div class="tombol">
+      <button type="button" class="btn btn-outline-warning text-white"data-toggle="modal" data-target="#myModal">REGISTER</button>
+      <button type="button" class="btn btn-outline-warning text-white"data-toggle="modal" data-target="#myModal">LOGIN</button>
+    </div>
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTitle">ANNOUNCEMENT</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Website Dalam Perbaikan</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="list-movie" id="listmovie">
+    <div class="search-bar">
+      <div class="input-group mb-3">
+
+        <span class="input-group-text"><i class="fa fa-search"></i></span>
+        <input type="text" id="genre-input" class="form-control" placeholder="Enter Genre" aria-label="Enter Genre" aria-describedby="button-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-warning text-white" id="search-button" type="button">Search</button>
+        </div>
+        
+      </div>
+    </div>
+    <div class="slider">
+     <span style="color: white;">R</span> <input type="range" id="red-slider" min="0" max="255" value="0">
+<span style="color: white;">G</span><input type="range" id="green-slider" min="0" max="255" value="0">
+<span style="color: white;">B</span><input type="range" id="blue-slider" min="0" max="255" value="0">
+    </div>
+    <div id="movie-list" class="movie-list"></div>
+  </div>
+  
+
+  <script>
+    const changingText = document.getElementById('changing-text');
+    const colors = ['#F6FA70', '#9376E0', '#A0D8B3','#DFA67B']; 
+    let currentIndex = 0;
+
+    function changeTextAndColor() {
+      const texts = ['ACTION', 'COMEDY', 'DRAMA','HORROR']; 
+      const currentColor = colors[currentIndex];
+      const currentText = texts[currentIndex];
+
+      changingText.textContent = currentText;
+      changingText.style.color = currentColor;
+
+      currentIndex = (currentIndex + 1) % texts.length; 
+    }
+
+    setInterval(changeTextAndColor, 4000); 
+
+
+    // Sample movie data
+    const movies = [
+      { title: 'IT 2', genre: 'Horror', image: 'https://popcornusa.s3.amazonaws.com/movies/650/10090-10442-ItChapte.jpg' },
+      { title: 'KKN Desa Penari', genre: 'Horror', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4VI7zYqkCbuvFBFKjw-pghe7hnvCLAFzC2bq9hxCsn3cwETvtAzKGmX99YxcQgsZKN3A&usqp=CAU' },
+      { title: 'The Raid', genre: 'Action', image: 'https://upload.wikimedia.org/wikipedia/id/e/ed/The_Raid_Poster.JPG' },
+      { title: 'Serigala Terakhir', genre: 'Action', image: 'https://upload.wikimedia.org/wikipedia/id/d/de/Poster-serigala-terakhir.jpg' },
+      { title: 'Dilan 1990', genre: 'Drama', image: 'https://upload.wikimedia.org/wikipedia/id/1/19/Dilan_1990_%28poster%29.jpg' },
+      { title: 'Cek Toko Sebelah', genre: 'Comedy', image: 'https://cdn.popmama.com/content-images/community/20211019/community-12844481e74419fec792dcf0f69e5839.JPG?1634580039' },
+      { title: 'My Stupid Boss', genre: 'Comedy', image: 'https://rakcer.id/wp-content/uploads/2023/05/ee3e87ce-1e8c-4ccb-bdb9-32ede46ac795-945x1024.webp' },
+      { title: 'Single ', genre: 'Comedy', image: 'https://qph.cf2.quoracdn.net/main-qimg-2d91d9e39347e9cb22668fa0f3fcdac5-lq' },
+    ];
+
+    // Function to render movie list
+    function renderMovieList(filteredMovies = movies) {
+      const movieListContainer = document.getElementById('movie-list');
+      movieListContainer.innerHTML = '';
+
+      filteredMovies.forEach(movie => {
+        const movieItem = document.createElement('div');
+        movieItem.classList.add('movie-item');
+
+        const movieImage = document.createElement('img');
+        movieImage.src = movie.image;
+        movieImage.alt = movie.title;
+
+        const movieTitle = document.createElement('h3');
+        movieTitle.textContent = movie.title;
+
+        const movieGenre = document.createElement('p');
+        movieGenre.textContent = movie.genre;
+
+        movieItem.appendChild(movieImage);
+        movieItem.appendChild(movieTitle);
+        movieItem.appendChild(movieGenre);
+
+        movieListContainer.appendChild(movieItem);
+      });
+    }
+
+    // Render initial movie list
+    renderMovieList();
+
+    // Search button click event
+const searchButton = document.getElementById('search-button');
+searchButton.addEventListener('click', () => {
+  const genreInput = document.getElementById('genre-input');
+  const selectedGenre = genreInput.value.toUpperCase();
+
+  const filteredMovies = movies.filter(movie => movie.genre.toUpperCase() === selectedGenre);
+  renderMovieList(filteredMovies);
+});
+
+const redSlider = document.getElementById('red-slider');
+    const greenSlider = document.getElementById('green-slider');
+    const blueSlider = document.getElementById('blue-slider');
+    const listMovie = document.querySelector('.list-movie');
+
+    redSlider.addEventListener('input', updateBackgroundColor);
+    greenSlider.addEventListener('input', updateBackgroundColor);
+    blueSlider.addEventListener('input', updateBackgroundColor);
+
+    function updateBackgroundColor() {
+      const redValue = redSlider.value;
+      const greenValue = greenSlider.value;
+      const blueValue = blueSlider.value;
+      
+      const backgroundColor = `rgb(${redValue}, ${greenValue}, ${blueValue})`;
+      listMovie.style.backgroundColor = backgroundColor;
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
